@@ -13,20 +13,18 @@ Antes de rodar a aplicação, certifique-se de ter instalado o Node.js 18.x e o 
     ```bash
     git clone https://github.com/https://github.com/venilson2/django-com-reactjs.git
     ```
-
-2. Instale as dependências do Node.js:
-
-    ```bash
-    cd django-com-reactjs
-    npm install
-    ```
-
-3. Instale as dependências do Python:
+2. Instale as dependências do Python:
 
     ```bash
     pip install -r requirements.txt
     ```
+    
+3. Instale as dependências do Node.js:
 
+    ```bash
+    cd django-com-reactjs/frontend
+    npm install
+    ```
 ## Rodando a aplicação
 
 Para rodar a aplicação, você precisará iniciar tanto o servidor Django quanto o Webpack para compilar o código React.
@@ -43,7 +41,7 @@ O servidor estará disponível em `http://localhost:8000`.
 
 ### Iniciando o Webpack
 
-1. Abra outro terminal e navegue até o diretório raiz do projeto.
+1. Abra outro terminal e navegue até o diretório front.
 
 2. Execute o seguinte comando para iniciar o Webpack em modo watch:
 
