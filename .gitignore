@@ -4,5 +4,5 @@ db.sqlite3
 venv
 __pycache__
 */__pycache__
-assets/dist
+frontend/dist
 webpack-stats.json
