@@ -19,7 +19,7 @@ const Login = () => {
             //     }
             // });
             if (true) {
-                navigate('/dashboard/');
+                navigate('/admin/');
             } else {
                 alert('Invalid credentials');
                 setUsername('');

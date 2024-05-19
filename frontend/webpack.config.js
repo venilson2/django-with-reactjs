@@ -17,7 +17,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       favicon: "public/favicon.ico"
-    })
+    }),
   ],
   module: {
     rules: [
