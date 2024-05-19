@@ -1,30 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 const Login = () => {
-    const [username, setUsername] = useState('');
+
+    const { login, authenticated, loading } = useContext(AuthContext);
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if (!loading) {
+            if (authenticated) {
+                navigate('/admin');
+            } else {
+                navigate('/login');
+            }
+        }
+    }, [authenticated, loading, navigate]);
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            // const response = await axios.post('/accounts/login/', { 
-            //     username: username,  
-            //     password: password
-            // }, {
-            //     headers: {
-            //         'X-CSRFToken': csrfToken
-            //     }
-            // });
-            if (true) {
-                navigate('/admin/');
-            } else {
-                alert('Invalid credentials');
-                setUsername('');
-                setPassword('');
-            }
+            const response = await login(email, password);
         } catch (error) {
             console.error('Error:', error);
         }
@@ -35,11 +33,11 @@ const Login = () => {
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <div>
-                    <label>Username:</label>
+                    <label>E-mail:</label>
                     <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div>

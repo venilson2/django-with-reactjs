@@ -1,12 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const Admin = () => {
-    const [message, setMessage] = useState('');
+
+    const { logout } = useContext(AuthContext);
+
+    const handleLogout = async (e) => {
+        e.preventDefault();
+        try {
+            await logout();
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
 
     return (
         <div>
             <h2>Admin</h2>
-            <p>{message}</p>
+            <button onClick={e => handleLogout(e)}>Logout</button>
         </div>
     );
 };
