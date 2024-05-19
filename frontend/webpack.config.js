@@ -4,9 +4,9 @@ var BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
   mode: 'development', // ou 'production' dependendo do ambiente
-  entry: path.join(__dirname, 'frontend/src/index'),
+  entry: path.join(__dirname, 'src/index'),
   output: {
-    path: path.join(__dirname, 'frontend/dist'),
+    path: path.join(__dirname, 'dist'),
     filename: '[name]-[fullhash].js' // Atualizado para usar [fullhash]
   },
   plugins: [
