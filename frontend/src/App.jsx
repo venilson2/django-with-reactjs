@@ -1,11 +1,14 @@
-import React from 'react';
-import Title from './components/Title';
-class App extends React.Component {
-  render () {
-    const text = 'Hello Wordl!!';
-    return (
-      <Title text={text} />
-    )
-  }
-}
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const App = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        navigate('/login');
+    }, [navigate]);
+
+    return null;
+};
+
 export default App;
