@@ -1,0 +1,8 @@
+node_modules
+package-lock.json
+db.sqlite3
+venv
+__pycache__
+*/__pycache__
+assets/dist
+webpack-stats.json
